@@ -145,11 +145,7 @@ export default function ContactPage() {
                   />
                 </div>
   
-                <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-sm leading-6 text-white/45">
-                    Protected with Formspree, a hidden honeypot field, and native browser validation.
-                  </p>
-  
+                <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">  
                   <button
                     type="submit"
                     className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:text-base"
