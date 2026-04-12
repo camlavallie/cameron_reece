@@ -22,7 +22,7 @@ export const metadata = {
     title: 'Cameron Reece',
     description:
       'Design, development, and CRM systems built with clarity and intention.',
-    url: 'https://yourdomain.com',
+    url: 'https://cameronreece.com',
     siteName: 'Cameron Reece',
     images: [
       {
