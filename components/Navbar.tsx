@@ -6,6 +6,7 @@ import Image from "next/image";
 import cameronReeceLogo from "@/assets/images/cameronreecelogo.png";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
