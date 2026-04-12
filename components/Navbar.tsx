@@ -20,7 +20,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 24)
     }
 
     handleScroll()
@@ -46,13 +46,18 @@ export default function Navbar() {
     <>
       <nav
         className={[
-          'fixed inset-x-0 top-0 z-[1000] border-b transition-all duration-300',
-          scrolled
-            ? 'border-white/10 bg-black/85 backdrop-blur-xl'
-            : 'border-transparent bg-[#0a0a0a]/95 backdrop-blur-md',
+          'fixed inset-x-0 top-0 z-[1000] transition-all duration-300',
+scrolled
+  ? 'border-white/10 bg-black shadow-[0_12px_40px_rgba(0,0,0,0.28)]'
+  : 'border-white/5 bg-black',
         ].join(' ')}
       >
-        <div className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-5 md:px-8">
+        <div
+          className={[
+            'mx-auto flex max-w-[1280px] items-center justify-between px-5 md:px-8 transition-all duration-300',
+            scrolled ? 'h-[60px]' : 'h-[72px]',
+          ].join(' ')}
+        >
           <Link
             href="/"
             aria-label="Cameron Reece home"
@@ -63,7 +68,10 @@ export default function Navbar() {
               src={cameronReeceLogo}
               alt="Cameron Reece logo"
               priority
-              className="h-auto max-h-[42px] w-auto object-contain md:max-h-[64px]"
+              className={[
+                'h-auto w-auto object-contain transition-all duration-300',
+                scrolled ? 'max-h-[38px] md:max-h-[52px]' : 'max-h-[42px] md:max-h-[64px]',
+              ].join(' ')}
             />
           </Link>
 
@@ -76,10 +84,10 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={[
-                      'group relative rounded-sm px-4 py-2 text-[0.875rem] font-semibold uppercase tracking-[0.06em] transition-colors duration-200',
+                      'group relative rounded-sm px-4 py-2 text-[0.82rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-200',
                       isActive
                         ? 'text-[#4791b2]'
-                        : 'text-[#8a8a8a] hover:text-[#4791b2]',
+                        : 'text-white/60 hover:text-[#4791b2]',
                     ].join(' ')}
                   >
                     {link.label}
@@ -95,10 +103,10 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <Link
               href="/contact"
-              className="hidden rounded-[3px] bg-[#4791b2] px-5 py-[0.55rem] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-white transition duration-200 hover:-translate-y-[1px] hover:bg-[#c8ff00] hover:text-black md:inline-flex"
+              className="hidden rounded-[4px] bg-[#4791b2] px-5 py-[0.58rem] text-[0.78rem] font-bold uppercase tracking-[0.08em] text-white transition duration-200 hover:-translate-y-[1px] hover:bg-[#c8ff00] hover:text-black md:inline-flex"
             >
               Let&apos;s Talk
             </Link>
@@ -138,7 +146,7 @@ export default function Navbar() {
         id="mobile-navigation"
         aria-hidden={!open}
         className={[
-          'fixed inset-0 z-[999] flex flex-col bg-[#0a0a0a] px-8 pb-12 pt-[100px] transition-all duration-300 md:hidden',
+          'fixed inset-0 z-[999] flex flex-col bg-[#0a0a0a]/95 px-8 pb-12 pt-[100px] backdrop-blur-xl transition-all duration-300 md:hidden',
           open
             ? 'pointer-events-auto translate-y-0 opacity-100'
             : 'pointer-events-none -translate-y-3 opacity-0',
@@ -183,7 +191,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="rounded-[3px] bg-[#4791b2] px-6 py-[0.65rem] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#c8ff00]"
+            className="rounded-[4px] bg-[#4791b2] px-6 py-[0.65rem] text-[0.8rem] font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#c8ff00]"
           >
             Let&apos;s Talk
           </Link>
