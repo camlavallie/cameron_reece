@@ -8,8 +8,8 @@ export default function Home() {
     <>
       <Landing />
       <Work />
-      <FavoriteThings/>
       <PipelineStep/>
+      <FavoriteThings/>
     </>
   );
 }

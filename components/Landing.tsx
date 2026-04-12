@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Landing() {
   const sections = [
     {
@@ -6,6 +8,7 @@ export default function Landing() {
       description:
         'I create brand identities, campaigns, and digital experiences that communicate clearly, feel elevated, and support the message instead of distracting from it.',
       cta: 'View my work',
+      href: '/work',
       theme: 'bg-[#0b0b0b] text-white',
       button: 'bg-white text-black hover:bg-white/90',
     },
@@ -14,7 +17,8 @@ export default function Landing() {
       title: 'Build systems that scale.',
       description:
         'From HubSpot CRM to email automation, segmentation, and marketing infrastructure, I build the systems that keep communication organized, intentional, and moving forward.',
-      cta: 'See the systems',
+      cta: 'View services',
+      href: '/services',
       theme: 'bg-[#f5f2eb] text-black',
       button: 'bg-black text-white hover:bg-black/90',
     },
@@ -24,6 +28,7 @@ export default function Landing() {
       description:
         'Every touchpoint is built with purpose—guiding people from first impression to deeper engagement, stronger response, and meaningful conversion.',
       cta: 'Start a project',
+      href: '/contact',
       theme: 'bg-[#111827] text-white',
       button: 'bg-white text-black hover:bg-white/90',
     },
@@ -66,7 +71,7 @@ export default function Landing() {
             <p className="mt-8 max-w-3xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
               I combine design, development, and marketing systems to build experiences
               that do more than look good—they create clarity, support growth, and move
-              people to action.
+              people to action. My Portfolio, built in React|Next.
             </p>
 
             <p className="mt-4 text-sm text-white/60">
@@ -74,19 +79,19 @@ export default function Landing() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href="#next"
+              <Link
+                href="/work"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:text-base"
               >
                 Explore my work
-              </a>
+              </Link>
 
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
               >
                 Contact me
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -163,12 +168,12 @@ export default function Landing() {
               </p>
 
               <div className="mt-8">
-                <a
-                  href="#"
+                <Link
+                  href={section.href}
                   className={`inline-flex items-center justify-center rounded-full px-8 py-3 text-base font-semibold transition ${section.button}`}
                 >
                   {section.cta}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -194,19 +199,19 @@ export default function Landing() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
+            <Link
               href="/work"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-base font-semibold text-black transition hover:bg-white/90"
             >
-              Checkout my recent work
-            </a>
+              Check out my recent work
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/10"
             >
               Contact me
-            </a>
+            </Link>
           </div>
         </div>
       </section>

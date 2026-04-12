@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 
 import mailchimpUnsubs from "@/assets/images/mailchimp_unsubscribs.png";
@@ -150,6 +151,34 @@ export default function AudienceRecoveryPipeline() {
             </div>
           ))}
         </div>
+        <div className="mt-16 text-center">
+  <div className="mx-auto h-px w-16 bg-white/20" />
+
+  <h3 className="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">
+    Want results like this?
+  </h3>
+
+  <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-stone-300 md:text-lg">
+    If your email list is struggling with engagement, unsubscribes, or lack of
+    structure, I can help build a system that actually supports growth.
+  </p>
+
+  <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+    <Link
+      href="/contact"
+      className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:text-base"
+    >
+      Start a project
+    </Link>
+
+    <Link
+      href="/services"
+      className="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
+    >
+      View more services
+    </Link>
+  </div>
+</div>
       </div>
     </section>
   );
