@@ -14,11 +14,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Cameron Reece | Design • Systems • Strategy',
   description:
-    'Portfolio of Cameron Reece — design, development, and CRM systems built with clarity and intention.',
-};
+    'Design, development, and CRM systems built with clarity and intention.',
+  openGraph: {
+    title: 'Cameron Reece',
+    description:
+      'Design, development, and CRM systems built with clarity and intention.',
+    url: 'https://yourdomain.com',
+    siteName: 'Cameron Reece',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+}
 
 export default function RootLayout({
   children,
