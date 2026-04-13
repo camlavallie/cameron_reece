@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import Lifestyle from '@/assets/images/graphics/1.png'
+import Vision from '@/assets/images/VISION_WASHING_WHITE_WITH_NAME.png'
 import dynamicedgesolutions from '@/assets/images/dynamicedgesolutions.png'
 import thepeacegov from '@/assets/images/thepeacegovlogo2.png'
 import powerandlove1 from '@/assets/images/BUFFALO_Story_1.png'
@@ -20,9 +20,9 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'Lifestyle Email Section',
+    title: 'Logo Design',
     category: 'Brand Identity',
-    image: Lifestyle.src,
+    image: Vision.src,
   },
   {
     title: 'Dynamic Edge Solutions',

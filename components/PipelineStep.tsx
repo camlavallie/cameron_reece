@@ -31,7 +31,7 @@ const pipelineSteps: PipelineStep[] = [
     category: "Strategy",
     title: "Segmentation became the reset",
     description:
-      "I brought our audience to Hubspot from MailChimp. I reworked the communication strategy around more intentional segmentation, cleaner audience targeting, and a more restrained send cadence.",
+      "I brought our audience to Hubspot from MailChimp. Reworked the communication strategy around more intentional segmentation, cleaner audience targeting, and a more restrained send cadence.",
     outcome:
       "The goal shifted from volume to relevance, meaning fewer emails and better fit for each audience.",
     image: hubspotLastFiscal,
@@ -160,7 +160,7 @@ export default function AudienceRecoveryPipeline() {
 
   <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-stone-300 md:text-lg">
     If your email list is struggling with engagement, unsubscribes, or lack of
-    structure, I can help build a system that actually supports growth.
+    structure, I can help build a system that supports growth.
   </p>
 
   <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
