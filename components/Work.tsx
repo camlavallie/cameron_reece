@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import summitWealth from '@/assets/images/summit-wealth.jpg'
 import honestPainting from '@/assets/images/honest-painting.jpg'
-import toChaiFor from '@/assets/images/to-chai-for.jpg'
+import toChaiFor from '@/assets/images/trainwithdan.png'
 import blackgranite from '@/assets/images/blackgranitesite.png'
 import lavallieRoastery from '@/assets/images/lavallie-roastery.jpg'
 import erinBiller from '@/assets/images/erin-biller.png'
@@ -57,13 +57,13 @@ const projects: Project[] = [
     details: ['Built with Nuxt', 'Author-focused UX', 'Clear content structure'],
   },
   {
-    title: 'To Chai For',
-    category: 'Ecommerce Build',
-    href: 'https://tochaifortx.com',
+    title: 'Train With Dan Mohler',
+    category: 'Event Landing Page',
+    href: 'https://trainwithdanmohler.netlify.app/',
     image: toChaiFor.src,
     summary:
-      'A warm, modern food brand experience designed to support online growth.',
-    details: ['Built with React / Next', 'Custom storefront', 'Mobile-first UX'],
+      'A warm, modern landing page to help drive event growth.',
+    details: ['Built with React / Next', 'Event-focused design', 'Mobile-first UX'],
   },
   {
     title: 'Summit Wealth',
