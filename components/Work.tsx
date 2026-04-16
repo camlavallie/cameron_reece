@@ -59,11 +59,11 @@ const projects: Project[] = [
   {
     title: 'Train With Dan Mohler',
     category: 'Event Landing Page',
-    href: 'https://trainwithdanmohler.netlify.app/',
+    href: 'https://trainwithdanmohler.com/',
     image: toChaiFor.src,
     summary:
       'A warm, modern landing page to help drive event growth.',
-    details: ['Built with React / Next', 'Event-focused design', 'Mobile-first UX'],
+    details: ['Built with React / Next', 'Event-focused design', 'Live Data Integrated with Hubspot', 'Mobile-first UX'],
   },
   {
     title: 'Summit Wealth',
