@@ -56,15 +56,21 @@ const projects: Project[] = [
       'A simple, elegant site designed to support an author platform and book visibility.',
     details: ['Built with Nuxt', 'Author-focused UX', 'Clear content structure'],
   },
-  {
-    title: 'Train With Dan Mohler',
-    category: 'Event Landing Page',
-    href: 'https://trainwithdanmohler.com/',
-    image: toChaiFor.src,
-    summary:
-      'A warm, modern landing page to help drive event growth.',
-    details: ['Built with React / Next', 'Event-focused design', 'Live Data Integrated with Hubspot', 'Mobile-first UX'],
-  },
+ {
+  title: 'Train With Dan Mohler',
+  category: 'Event Landing Page',
+  href: 'https://trainwithdanmohler.com/',
+  image: toChaiFor.src,
+  summary:
+    'Custom-built event landing page designed to drive registrations, with integrated tracking and analytics for performance insights.',
+  details: [
+    'Built with React / Next.js',
+    'Event-focused UX and conversion design',
+    'Custom engagement tracking (time on page, behavior)',
+    'HubSpot CRM integration with UTM attribution',
+    'Mobile-first, responsive layout',
+  ],
+},
   {
     title: 'Summit Wealth',
     category: 'Logo Design | Brand Identity',
