@@ -8,7 +8,7 @@ import cameronReeceLogo from '@/assets/images/cameronreecelogo.png'
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Work', href: '/work' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
 ]
