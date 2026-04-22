@@ -15,6 +15,11 @@ import coffee1 from '@/assets/images/Coffee.png'
 import coffee2 from '@/assets/images/The Peace Gov BAGS 32OZ PRINTdevo.png'
 import encounter2 from '@/assets/images/Encounter_Nightdevo.png'
 import ekballo1 from '@/assets/images/Ekballo Squaredevo.png'
+import Intake from '@/assets/images/Intake.png'
+import Intake2 from '@/assets/images/Intake 2Intake.png'
+import Intake3 from '@/assets/images/Intake 3.png'
+import truss from '@/assets/images/Truss Signs.jpg'
+import stepandrepeat from '@/assets/images/StepAndRepeat.jpg'
 
 type Project = {
   title: string
@@ -25,6 +30,13 @@ type Project = {
 }
 
 const projects: Project[] = [
+  {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake2.src,
+    fit: 'contain',
+    tone: 'light',
+  },
   {
     title: 'Logo Design',
     category: 'Brand Identity',
@@ -40,11 +52,25 @@ const projects: Project[] = [
     tone: 'light',
   },
   {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake.src,
+    fit: 'contain',
+    tone: 'light',
+  },
+  {
     title: 'Logo Design',
     category: 'Brand Identity | Logo',
     image: dynamicedgesolutions.src,
     fit: 'contain',
     tone: 'dark',
+  },
+    {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake3.src,
+    fit: 'cover',
+    tone: 'light',
   },
   {
     title: 'Logo | Web | Print | Packaging Design',
@@ -53,6 +79,7 @@ const projects: Project[] = [
     fit: 'cover',
     tone: 'dark',
   },
+  
   {
     title: 'Coffee Layout Design',
     category: 'Brand Identity',
@@ -106,6 +133,20 @@ const projects: Project[] = [
     title: 'Event Opt-In Graphic',
     category: 'Brand Identity',
     image: encounter2.src,
+    fit: 'cover',
+    tone: 'dark',
+  },
+  {
+    title: 'Step and Repeat Print Design',
+    category: 'Brand Identity',
+    image: stepandrepeat.src,
+    fit: 'cover',
+    tone: 'dark',
+  },
+  {
+    title: 'Truss Panel Print Design',
+    category: 'Brand Identity',
+    image: truss.src,
     fit: 'cover',
     tone: 'dark',
   },
@@ -226,12 +267,11 @@ export default function GraphicWork() {
             </p>
 
             <h1 className="text-4xl font-semibold tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl">
-              My portfolio, arranged like a Pinterest board.
+              My portfolio.
             </h1>
 
             <p className="mt-4 max-w-2xl text-lg leading-8 text-neutral-700">
-              A visual gallery of branding and graphic work. Click any image to view the
-              full graphic.
+                A curated gallery of recent branding and graphic design—click any piece to view it in full.
             </p>
           </div>
 
