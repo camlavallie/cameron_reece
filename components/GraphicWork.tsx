@@ -20,6 +20,9 @@ import Intake2 from '@/assets/images/Intake 2Intake.png'
 import Intake3 from '@/assets/images/Intake 3.png'
 import Intake4 from '@/assets/images/Intake4.png'
 import Intake5 from '@/assets/images/Intake5.png'
+import Intake6 from '@/assets/images/INTAKE V2 SUARE 1.png'
+import Intake7 from '@/assets/images/INTAKE V2 SUARE 2.png'
+import Intake8 from '@/assets/images/INTAKE V2 SUARE 3.png'
 import truss from '@/assets/images/Truss Signs.jpg'
 import stepandrepeat from '@/assets/images/StepAndRepeat.jpg'
 
@@ -172,6 +175,27 @@ const projects: Project[] = [
     image: ekballo1.src,
     fit: 'cover',
     tone: 'dark',
+  },
+      {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake6.src,
+    fit: 'cover',
+    tone: 'light',
+  },
+      {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake7.src,
+    fit: 'cover',
+    tone: 'light',
+  },
+      {
+    title: 'Campain Ad Design',
+    category: 'Brand Identity',
+    image: Intake8.src,
+    fit: 'cover',
+    tone: 'light',
   },
 ]
 
