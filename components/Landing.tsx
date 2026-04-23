@@ -80,7 +80,7 @@ export default function Landing() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <Link
-                href="/work"
+                href="/portfolio"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:text-base"
               >
                 Explore my work
