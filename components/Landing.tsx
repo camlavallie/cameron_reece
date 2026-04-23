@@ -8,7 +8,7 @@ export default function Landing() {
       description:
         'I create brand identities, campaigns, and digital experiences that communicate clearly, feel elevated, and support the message instead of distracting from it.',
       cta: 'View my work',
-      href: '/work',
+      href: '/portfolio',
       theme: 'bg-[#0b0b0b] text-white',
       button: 'bg-white text-black hover:bg-white/90',
     },
