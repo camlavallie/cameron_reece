@@ -96,14 +96,7 @@ export default function Landing() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
-          <div className="flex flex-col items-center gap-3 text-white/70">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] sm:text-xs">
-              Scroll
-            </span>
-            <span className="h-10 w-px bg-white/40" />
-          </div>
-        </div>
+    
       </section>
 
       <section
