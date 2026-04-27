@@ -75,7 +75,7 @@ export default function Landing() {
             </p>
 
             <p className="mt-4 text-sm text-white/60">
-              HubSpot • Automation • CRM Strategy • Email Marketing • Front-End Development
+              HubSpot • Automation • CRM Strategy • Email Marketing • Front-End Development • Graphic Design
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
