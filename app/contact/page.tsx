@@ -1,10 +1,52 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
+type SubmitState = "idle" | "loading" | "success" | "error";
+
 export default function ContactPage() {
+    const [submitState, setSubmitState] = useState<SubmitState>("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+      event.preventDefault();
+      setSubmitState("loading");
+      setErrorMessage("");
+
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const result = (await response.json()) as { error?: string };
+
+        if (!response.ok) {
+          throw new Error(result.error || "Something went wrong. Please try again.");
+        }
+
+        form.reset();
+        setSubmitState("success");
+      } catch (error) {
+        setErrorMessage(
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.",
+        );
+        setSubmitState("error");
+      }
+    }
+
     return (
       <main className="min-h-screen bg-black text-white">
         <section className="relative isolate overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_30%)]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-stone-950 to-black" />
-  
+
           <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-16 lg:py-28">
             <div className="max-w-xl">
               <p className="text-xs font-semibold uppercase tracking-[0.38em] text-white/55 sm:text-sm">
@@ -35,14 +77,7 @@ export default function ContactPage() {
             </div>
   
             <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-6 lg:p-8">
-              <form
-                action="https://formspree.io/f/mlepkqzj"
-                method="POST"
-                className="space-y-5"
-              >
-                <input type="hidden" name="_subject" value="New portfolio contact form submission" />
-                <input type="hidden" name="source" value="nextjs-portfolio-contact-page" />
-                <input type="hidden" name="page" value="contact" />
+              <form onSubmit={handleSubmit} className="space-y-5">
   
                 <div className="hidden" aria-hidden="true">
                   <label htmlFor="website">Website</label>
@@ -112,7 +147,7 @@ export default function ContactPage() {
   
                 <div>
                   <label htmlFor="budget" className="mb-2 block text-sm font-medium text-white/75">
-                    Budget range
+                    Budget range <span className="text-white/45">(optional)</span>
                   </label>
                   <select
                     id="budget"
@@ -132,12 +167,12 @@ export default function ContactPage() {
   
                 <div>
                   <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/75">
-                    Tell me about the project
+                    Project details
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={7}
+                    rows={6}
                     required
                     minLength={20}
                     className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/25 focus:border-white/25 focus:bg-black/40"
@@ -148,10 +183,23 @@ export default function ContactPage() {
                 <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">  
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 sm:text-base"
+                    disabled={submitState === "loading"}
+                    className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60 sm:text-base"
                   >
-                    Send message
+                    {submitState === "loading" ? "Sending…" : "Send message"}
                   </button>
+                  <p className="text-sm text-white/50">
+                    I usually respond within 1–2 business days.
+                  </p>
+                </div>
+
+                <div aria-live="polite" role="status" className="min-h-6 text-sm">
+                  {submitState === "success" && (
+                    <p className="text-emerald-300">Thanks! Your message has been sent.</p>
+                  )}
+                  {submitState === "error" && (
+                    <p className="text-red-300">{errorMessage}</p>
+                  )}
                 </div>
               </form>
             </div>
@@ -160,4 +208,3 @@ export default function ContactPage() {
       </main>
     );
   }
-  
