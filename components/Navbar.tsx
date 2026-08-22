@@ -30,10 +30,6 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    setOpen(false)
-  }, [pathname])
-
-  useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
@@ -83,6 +79,7 @@ scrolled
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    onClick={closeMenu}
                     className={[
                       'group relative rounded-sm px-4 py-2 text-[0.82rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-200',
                       isActive
@@ -106,6 +103,7 @@ scrolled
           <div className="flex items-center gap-5">
             <Link
               href="/contact"
+              onClick={closeMenu}
               className="hidden rounded-[4px] bg-[#4791b2] px-5 py-[0.58rem] text-[0.78rem] font-bold uppercase tracking-[0.08em] text-white transition duration-200 hover:-translate-y-[1px] hover:bg-[#c8ff00] hover:text-black md:inline-flex"
             >
               Let&apos;s Talk

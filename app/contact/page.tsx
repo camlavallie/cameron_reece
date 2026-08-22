@@ -146,26 +146,6 @@ export default function ContactPage() {
                 </div>
   
                 <div>
-                  <label htmlFor="budget" className="mb-2 block text-sm font-medium text-white/75">
-                    Budget range <span className="text-white/45">(optional)</span>
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    defaultValue=""
-                    className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-base text-white outline-none transition focus:border-white/25 focus:bg-black/40"
-                  >
-                    <option value="" disabled className="text-black">
-                      Select one
-                    </option>
-                    <option value="under-1k" className="text-black">Under $1k</option>
-                    <option value="1k-3k" className="text-black">$1k–$3k</option>
-                    <option value="3k-5k" className="text-black">$3k–$5k</option>
-                    <option value="5k-plus" className="text-black">$5k+</option>
-                  </select>
-                </div>
-  
-                <div>
                   <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/75">
                     Project details
                   </label>

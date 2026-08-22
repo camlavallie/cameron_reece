@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image, { type StaticImageData } from 'next/image'
 import { useEffect, useState } from 'react'
 import Vision from '@/assets/images/VisionLogo.png'
 import Vision2 from '@/assets/images/VW_RECTANGLE_2(White Background).png'
@@ -29,7 +30,7 @@ import stepandrepeat from '@/assets/images/StepAndRepeat.jpg'
 type Project = {
   title: string
   category: string
-  image: string
+  image: StaticImageData
   fit?: 'cover' | 'contain'
   tone?: 'dark' | 'light'
 }
@@ -38,63 +39,63 @@ const projects: Project[] = [
   {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake2.src,
+    image: Intake2,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake5.src,
+    image: Intake5,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Logo Design',
     category: 'Brand Identity',
-    image: Vision.src,
+    image: Vision,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Logo Design',
     category: 'Brand Identity',
-    image: Vision2.src,
+    image: Vision2,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake.src,
+    image: Intake,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Logo Design',
     category: 'Brand Identity | Logo',
-    image: dynamicedgesolutions.src,
+    image: dynamicedgesolutions,
     fit: 'contain',
     tone: 'dark',
   },
     {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake3.src,
+    image: Intake3,
     fit: 'cover',
     tone: 'light',
   },
     {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake4.src,
+    image: Intake4,
     fit: 'cover',
     tone: 'light',
   },
   {
     title: 'Logo | Web | Print | Packaging Design',
     category: 'Brand Identity',
-    image: thepeacegov.src,
+    image: thepeacegov,
     fit: 'cover',
     tone: 'dark',
   },
@@ -102,98 +103,98 @@ const projects: Project[] = [
   {
     title: 'Coffee Layout Design',
     category: 'Brand Identity',
-    image: coffee2.src,
+    image: coffee2,
     fit: 'contain',
     tone: 'light',
   },
   {
     title: 'Production Bag Design',
     category: 'Brand Identity',
-    image: pgbag.src,
+    image: pgbag,
     fit: 'cover',
     tone: 'light',
   },
   {
     title: 'IG Post',
     category: 'Brand Identity',
-    image: powerandlove2.src,
+    image: powerandlove2,
     fit: 'cover',
     tone: 'light',
   },
   {
     title: 'Training Program Brand Design',
     category: 'Brand Identity',
-    image: thejourney.src,
+    image: thejourney,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'Book Cover Design',
     category: 'Brand Identity',
-    image: bevan.src,
+    image: bevan,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'IG Post',
     category: 'Brand Identity | Social Graphic',
-    image: powerandlove4.src,
+    image: powerandlove4,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'Coffee Sticker Design',
     category: 'Brand Identity',
-    image: coffee1.src,
+    image: coffee1,
     fit: 'cover',
     tone: 'light',
   },
   {
     title: 'Event Opt-In Graphic',
     category: 'Brand Identity',
-    image: encounter2.src,
+    image: encounter2,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'Step and Repeat Print Design',
     category: 'Brand Identity',
-    image: stepandrepeat.src,
+    image: stepandrepeat,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'Truss Panel Print Design',
     category: 'Brand Identity',
-    image: truss.src,
+    image: truss,
     fit: 'cover',
     tone: 'dark',
   },
   {
     title: 'Email Header Design',
     category: 'Brand Identity',
-    image: ekballo1.src,
+    image: ekballo1,
     fit: 'cover',
     tone: 'dark',
   },
       {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake6.src,
+    image: Intake6,
     fit: 'cover',
     tone: 'light',
   },
       {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake7.src,
+    image: Intake7,
     fit: 'cover',
     tone: 'light',
   },
       {
     title: 'Campain Ad Design',
     category: 'Brand Identity',
-    image: Intake8.src,
+    image: Intake8,
     fit: 'cover',
     tone: 'light',
   },
@@ -226,7 +227,7 @@ function GalleryGrid({
                   isContain ? 'bg-[#f4efe8]' : isLight ? 'bg-[#f4efe8]' : 'bg-black',
                 ].join(' ')}
               >
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className={[
@@ -393,7 +394,7 @@ export default function GraphicWork() {
               ].join(' ')}
             >
               <div className="relative">
-                <img
+                <Image
                   src={activeProject.image}
                   alt={activeProject.title}
                   className={[

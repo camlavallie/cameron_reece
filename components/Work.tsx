@@ -3,6 +3,7 @@ import summitWealth from '@/assets/images/summit-wealth.jpg'
 import honestPainting from '@/assets/images/honest-painting.jpg'
 import toChaiFor from '@/assets/images/trainwithdan.png'
 import blackgranite from '@/assets/images/blackgranitesite.png'
+import powerAndLove from '@/assets/images/P+L_Site.png'
 import lavallieRoastery from '@/assets/images/lavallie-roastery.jpg'
 import erinBiller from '@/assets/images/erin-biller.png'
 
@@ -50,9 +51,22 @@ const projects: Project[] = [
     details: ['Built with Nuxt / Vue', 'Responsive frontend', 'Lead-focused layout'],
   },
   {
+    title: 'Power + Love',
+    category: 'Website Design | Web Development',
+    href: 'https://powerandlove.org/',
+    image: powerAndLove.src,
+    summary:
+      'A bold, movement-driven website that helps people discover the mission, experience the story, and find an upcoming event.',
+    details: [
+      'Custom website design and development',
+      'Event discovery and conversion-focused UX',
+      'Responsive, story-led experience',
+    ],
+  },
+  {
     title: 'Black Granite Construction',
     category: 'Web Development',
-    href: 'https://blackgraniteconstruction.netlify.app/',
+    href: 'https://blackgraniteconstruction.com/',
     image: blackgranite.src,
     summary:
       'A strong, no-nonsense construction site built to establish credibility and convert visitors into qualified leads.',

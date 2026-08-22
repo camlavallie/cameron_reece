@@ -10,13 +10,6 @@ const PROJECT_TYPES: Record<string, string> = {
   other: "Other",
 };
 
-const BUDGET_RANGES: Record<string, string> = {
-  "under-1k": "Under $1k",
-  "1k-3k": "$1k–$3k",
-  "3k-5k": "$3k–$5k",
-  "5k-plus": "$5k+",
-};
-
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function clean(value: unknown, maxLength: number) {
@@ -61,14 +54,12 @@ export async function POST(request: Request) {
   const name = clean(data.name, 100);
   const email = clean(data.email, 254).toLowerCase();
   const projectType = clean(data.projectType, 50);
-  const budget = clean(data.budget, 50);
   const message = clean(data.message, 5000);
 
   if (
     name.length < 2 ||
     !EMAIL_PATTERN.test(email) ||
     !PROJECT_TYPES[projectType] ||
-    (budget && !BUDGET_RANGES[budget]) ||
     message.length < 20
   ) {
     return Response.json(
@@ -90,7 +81,6 @@ export async function POST(request: Request) {
   }
 
   const projectLabel = PROJECT_TYPES[projectType];
-  const budgetLabel = budget ? BUDGET_RANGES[budget] : "Not provided";
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br />");
 
   try {
@@ -113,7 +103,6 @@ export async function POST(request: Request) {
         `Name: ${name}`,
         `Email: ${email}`,
         `Project type: ${projectLabel}`,
-        `Budget range: ${budgetLabel}`,
         "",
         "Project details:",
         message,
@@ -123,7 +112,6 @@ export async function POST(request: Request) {
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Project type:</strong> ${escapeHtml(projectLabel)}</p>
-        <p><strong>Budget range:</strong> ${escapeHtml(budgetLabel)}</p>
         <p><strong>Project details:</strong></p>
         <p>${safeMessage}</p>
       `,
