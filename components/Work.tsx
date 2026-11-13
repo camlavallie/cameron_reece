@@ -6,17 +6,44 @@ import blackgranite from '@/assets/images/blackgranitesite.png'
 import powerAndLove from '@/assets/images/P+L_Site.png'
 import lavallieRoastery from '@/assets/images/lavallie-roastery.jpg'
 import erinBiller from '@/assets/images/erin-biller.png'
+import lcuSite from '@/assets/images/lcu_site.png'
+import lcVenue from '@/assets/images/lc_venue.png'
 
 type Project = {
   title: string
   category: string
   href: string
-  image: string
+  image?: string
   summary: string
   details: string[]
 }
 
 const projects: Project[] = [
+  {
+    title: 'Lifestyle Christianity University',
+    category: 'Webflow Development | Custom Code',
+    href: 'https://www.lifestylechristianityu.com/',
+    image: lcuSite.src,
+    summary:
+      'Built and maintained the Lifestyle Christianity University website in Webflow, extending the platform with custom-coded components and JavaScript to create functionality beyond standard page-builder capabilities. Developed responsive, on-brand experiences while supporting marketing campaigns, lead generation, and prospective student engagement.',
+    details: [
+      'Built in Webflow',
+      'Custom-coded components and JavaScript',
+      'Campaign, lead-gen and student engagement support',
+    ],
+  },
+  {
+    title: 'Lifestyle Christianity Venue',
+    category: 'Product Design | Web Dev | CRM Integration',
+    href: 'https://venue.lifestylechristianity.com/',
+    image: lcVenue.src,
+    summary:
+      'A venue rental site and internal dashboard for managing rental inquiries, connected to GoHighLevel for automated lead follow-up.',
+    details: [
+      'Built venue.lifestylechristianity.com and an internal dashboard for managing venue rental inquiries',
+      'Integrated the site with GoHighLevel via API, routing new leads into an automated funnel that handles customer follow-up and sends notifications to the internal team',
+    ],
+  },
   {
     title: 'The Peace Gov',
     category: 'Logo Design | Brand Identity | Ecommerce Experience',
@@ -126,7 +153,11 @@ export default function Work() {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url(${project.image})` }}
+                style={
+                  project.image
+                    ? { backgroundImage: `url(${project.image})` }
+                    : { backgroundImage: 'linear-gradient(135deg, #2a2724 0%, #0b0b0b 100%)' }
+                }
               />
 
               <div className="absolute inset-0 bg-black/35 transition duration-500 group-hover:bg-black/55" />
@@ -143,7 +174,7 @@ export default function Work() {
                   </h3>
                 </div>
 
-                <div className="mt-4 max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-6 group-hover:max-h-80 group-hover:opacity-100">
+                <div className="mt-4 max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-6 group-hover:max-h-[36rem] group-hover:opacity-100">
                   <p className="max-w-md text-base leading-7 text-white/90">
                     {project.summary}
                   </p>

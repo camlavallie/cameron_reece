@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CrmIntegrations from '@/components/CrmIntegrations';
 
 type Service = {
   title: string;
@@ -17,6 +18,18 @@ const services: Service[] = [
       'Custom portfolio and business websites',
       'Next.js / React builds with Tailwind CSS',
       'Responsive layouts with strong visual hierarchy',
+    ],
+  },
+  {
+    title: 'Product Design & UX/UI',
+    category: 'Product',
+    description:
+      'User-centered product design for apps, dashboards, and internal tools—from first user flow to a polished, buildable interface.',
+    bullets: [
+      'User flows, journey mapping, and flowcharts in Figma',
+      'Wireframes, interactive prototypes, and UI design',
+      'Design systems and reusable component libraries',
+      'Dashboards and internal tools designed and built in React / Next.js',
     ],
   },
   {
@@ -39,6 +52,28 @@ const services: Service[] = [
       'Contact property planning and cleanup',
       'List segmentation and audience organization',
       'Marketing contact and subscription setup',
+    ],
+  },
+  {
+    title: 'Next.js + CRM Integrations',
+    category: 'Integrations',
+    description:
+      'Next.js websites and landing pages that send leads straight into your CRM with clean data and full attribution.',
+    bullets: [
+      'Forms connected to HubSpot, GoHighLevel, and more via API',
+      'Automatic contact, deal, and opportunity creation',
+      'UTM and source tracking on every lead',
+    ],
+  },
+  {
+    title: 'App Integrations & Automations',
+    category: 'Integrations',
+    description:
+      'Custom apps, internal dashboards, and webhooks that connect your tools to your CRM and automate the follow-up.',
+    bullets: [
+      'API and webhook integrations that sync data both ways',
+      'Internal dashboards for inquiries and pipelines',
+      'Automated follow-up funnels and team notifications',
     ],
   },
   {
@@ -78,6 +113,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
+    <>
     <section className="bg-stone-950 py-20 text-white md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -90,7 +126,7 @@ export default function Services() {
           </h2>
 
           <p className="mt-6 text-base leading-7 text-stone-300 md:text-lg">
-            I help brands, businesses, and teams create clearer websites, stronger brand systems,
+            I help brands, businesses, and teams create clearer websites, user-centered products, stronger brand systems,
             cleaner CRM structure, and more intentional marketing that actually supports growth.
           </p>
         </div>
@@ -99,7 +135,8 @@ export default function Services() {
           {services.map((service, index) => (
             <article
               key={service.title}
-              className="group flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] hover:shadow-2xl hover:shadow-black/20"
+              id={service.category === 'Product' ? 'product-design' : undefined}
+              className="scroll-mt-28 group flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06] hover:shadow-2xl hover:shadow-black/20"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-400">
@@ -166,5 +203,7 @@ export default function Services() {
         </div>
       </div>
     </section>
+    <CrmIntegrations />
+    </>
   );
 }

@@ -16,7 +16,7 @@ export default function Landing() {
       eyebrow: 'Systems',
       title: 'Build systems that scale.',
       description:
-        'From HubSpot CRM to email automation, segmentation, and marketing infrastructure, I build the systems that keep communication organized, intentional, and moving forward.',
+        'From HubSpot, GoHighLevel, Braze, and Mailchimp to Next.js-to-CRM integrations, email automation, segmentation, and marketing infrastructure, I build the systems that keep communication organized, intentional, and moving forward.',
       cta: 'View services',
       href: '/services',
       theme: 'bg-[#f5f2eb] text-black',
@@ -31,6 +31,16 @@ export default function Landing() {
       href: '/contact',
       theme: 'bg-[#111827] text-white',
       button: 'bg-white text-black hover:bg-white/90',
+    },
+    {
+      eyebrow: 'Product',
+      title: 'Design products people actually use.',
+      description:
+        'From user flows and journey maps to wireframes, prototypes, and polished UI, I design dashboards, apps, and digital products around real user needs—then build them out in code.',
+      cta: 'Explore product design',
+      href: '/services#product-design',
+      theme: 'bg-[#e9e4dc] text-black',
+      button: 'bg-black text-white hover:bg-black/90',
     },
   ];
 
@@ -75,7 +85,7 @@ export default function Landing() {
             </p>
 
             <p className="mt-4 text-sm text-white/60">
-              HubSpot • Automation • CRM Strategy • Email Marketing • Front-End Development • Graphic Design
+              Product Design • UX/UI • HubSpot • CRM Integrations • Automation • CRM Strategy • Email Marketing • Front-End Development • Graphic Design
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -103,7 +113,7 @@ export default function Landing() {
         id="next"
         className="relative z-10 -mt-10 px-4 pb-6 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md sm:grid-cols-3 sm:p-6">
+        <div className="mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md sm:grid-cols-2 sm:p-6 lg:grid-cols-4">
           <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
               DESIGN
@@ -112,6 +122,17 @@ export default function Landing() {
             <p className="mt-3 text-sm leading-7 text-white/70">
               I design brand systems, campaigns, and visual experiences that communicate
               clearly and elevate the message without unnecessary noise.
+            </p>
+          </div>
+
+          <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+              PRODUCT DESIGN
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold">Designed around users</h3>
+            <p className="mt-3 text-sm leading-7 text-white/70">
+              I map user journeys, prototype in Figma, and design intuitive interfaces for
+              apps, dashboards, and internal tools.
             </p>
           </div>
 
